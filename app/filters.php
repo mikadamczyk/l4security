@@ -40,7 +40,9 @@ Route::filter('serviceAuth', function(){
     }
 });
 Route::filter('serviceCSRF',function(){
-    if (Session::token() != Request::header('csrf_token')) {
+    $headers = getallheaders();
+//    if (Session::token() != Request::header('csrf_token')) {
+    if (Session::token() != $headers['csrf_token']) {    
         return Response::json([
             'message' => 'I’m a teapot !!! you stupid hacker :D'
         ], 418);

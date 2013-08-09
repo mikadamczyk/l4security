@@ -5,7 +5,7 @@ angular.module("myApp",['ngResource','ngSanitize'])
         $routeProvider.otherwise({redirectTo :'/'})
     }]).config(function($httpProvider){
 
-        var interceptor = function($rootScope,$location,$q,Flash){
+        var interceptor = function($rootScope,$location,$q, Flash){
 
         var success = function(response){
             return response
